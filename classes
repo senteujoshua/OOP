@@ -1,0 +1,41 @@
+package objects;
+
+import java.util.Scanner;
+class book {
+	
+String title;
+String author;
+int numberOfPages;
+}
+public class objects {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// creating objects
+ book z=new book();
+ book z2=new book();
+ // book 1
+ z.title="";
+ z.author="";
+ z.numberOfPages=0;
+ // book 2
+ z.title="";
+ z.author="";
+ z.numberOfPages=0;
+ Scanner in = new Scanner(System.in);
+ System.out.println("Please enter the title of the book");
+ z.title=in.nextLine();
+ System.out.println("Please enter the author name");
+ z.author=in.nextLine();
+ System.out.println("Please enter the number of pages");
+ z.numberOfPages=in.nextInt();
+ 
+ // display book 1
+ System.out.println("The book title is:"+z.title);
+ System.out.println("The book author is:"+z.author);
+ System.out.println("The book has " +z.numberOfPages+ " pages");
+ 
+ 
+	}
+
+}
