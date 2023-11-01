@@ -14,6 +14,7 @@ class ATM {
     public void Setdeposit(double amount)
     {
         balance+=amount;
+        System.out.println( "Deposited:"+amount);
         getBalance();
     }
     public void setWithdraw(double amount) {
@@ -25,12 +26,59 @@ class ATM {
         }
     }
 }
+class BankAccount{
+    int acNo;
+    String acName,acPhone,acEmail;
+    double acBal;
+    public BankAccount(int acNo,String acName,String acPhone,String acEmail,double acBal){
+        this.acNo=acNo;
+        this.acName=acName;
+        this.acPhone=acPhone;
+        this.acEmail=acEmail;
+        this.acBal=acBal;
+    }
+    public void accountholder(){
+        System.out.println("Account Number:"  + acNo);
+        System.out.println("Account Holder Name:"+ acName);
+        System.out.println("Account Holder Address"+acEmail);
+        System.out.println("Account Holder Phone"+acPhone);
+        System.out.println("Account Holder Balance"+acBal);
+    }
+  private double balance;
+  public BankAccount(double initialBalance) {
+    balance = initialBalance;
+  }
+  public void getBalance()
+  {
+    System.out.println("The balance is\t"+balance);
+  }
+  public void Setdeposit(double amount)
+  {
+    balance+=amount;
+    System.out.println( "Deposited:"+amount);
+    getBalance();
+  }
 
+}
+class CurrAcc extends BankAccount{
+    public CurrAcc(int acNo,String acName,String acPhone,String acEmail,double acBal){
+        super(acNo,acName,acPhone,acEmail,acBal);
+    }
+
+}
 public class AtmMain {
     public static void main(String[] args) {
         // Create an ATM object with an initial balance of $1000
         ATM atm = new ATM(1000.0);
         Scanner scanner = new Scanner(System.in);
+        CurrAcc holder1= new CurrAcc(24345,"Senteu","0115265472","senteujoshua@gmail.com",45000);
+      System.out.println("SAVING ACCOUNT DETAILS\t");
+      holder1.accountholder();
+      holder1.Setdeposit(3000);
+      holder1.getBalance();
+
+
+
 
         for(int count =0;count<4;count++) {
             int maxTrials = 3;
